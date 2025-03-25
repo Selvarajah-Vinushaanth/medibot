@@ -5,6 +5,7 @@ from langchain.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from pinecone.grpc import PineconeGRPC as Pinecone
 from pinecone import ServerlessSpec
+from waitress import serve
 import os
 from dotenv import load_dotenv
 from langchain_pinecone import PineconeVectorStore
@@ -76,4 +77,5 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port= 8080, debug= True)
+    port = int(os.environ.get("PORT", 8080))  # Default to 8080 if PORT is not set
+    serve(app, host="0.0.0.0", port=port)
