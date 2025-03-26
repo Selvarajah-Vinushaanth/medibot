@@ -74,9 +74,8 @@ def chat():
     return str(response["answer"])
 
 
-
-
 if __name__ == '__main__':
-    port = 8080  # Hardcoded port
-    print(f"🚀 Starting server on port {port}")  # Debugging info
+    # Get port from environment variable or default to 8080
+    port = int(os.environ.get('PORT', 8080))
+    print(f"🚀 Starting server on port {port}")
     serve(app, host="0.0.0.0", port=port)
