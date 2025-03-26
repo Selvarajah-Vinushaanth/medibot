@@ -38,22 +38,22 @@
         }
 
         .chat {
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
             display: flex;
             align-items: center;
-            padding: 2rem 0;
+            justify-content: center; /* Center the card horizontally and vertically */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
             box-sizing: border-box;
         }
-
+        
         .card {
-            height: 85vh; /* Fixed height relative to viewport */
-            min-height: 600px; /* Minimum height */
-            max-height: 850px; /* Maximum height */
-            width: 100%;
-            border-radius: 15px !important;
+            height: 100%; /* Full height of the parent container */
+            width: 100%; /* Full width of the parent container */
+            border-radius: 0 !important; /* Remove border radius for full-screen effect */
             background-color: var(--primary-bg) !important;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
+            box-shadow: none; /* Optional: Remove shadow for a cleaner look */
             display: flex;
             flex-direction: column;
         }
@@ -299,6 +299,7 @@
             }
             
             .chat {
+                width:100vw;
                 padding: 0;
             }
         }
@@ -451,6 +452,47 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+
+    /* Update these specific style rules */
+    .container-fluid {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .row {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .chat {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .col-md-8, .col-xl-6 {
+        padding: 0;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .card {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .msg_card_body {
+        height: calc(100vh - 130px); /* Adjust for header and footer height */
+        overflow-y: auto;
+    }
     </style>
 </head>
 <body>
@@ -541,7 +583,7 @@
                 } else {
                     return `<div class="d-flex justify-content-start mb-4">
                                 <div class="img_cont_msg">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img_msg">
+                                    <img src="https://th.bing.com/th/id/R.6ab3974ddb2099c1d8eb6e898bd34789?rik=k4%2bkKAmPGROR4A&pid=ImgRaw&r=0" class="rounded-circle user_img_msg">
                                 </div>
                                 <div class="msg_cotainer">${formattedContent}
                                     <span class="msg_time">${time}</span>
@@ -565,7 +607,7 @@
             function showTypingIndicator() {
                 const typingHtml = `<div class="d-flex justify-content-start mb-4">
                     <div class="img_cont_msg">
-                        <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img_msg">
+                        <img src="https://th.bing.com/th/id/R.6ab3974ddb2099c1d8eb6e898bd34789?rik=k4%2bkKAmPGROR4A&pid=ImgRaw&r=0" class="rounded-circle user_img_msg">
                     </div>
                     <div class="msg_cotainer typing-indicator">
                         <span class="dot"></span>
