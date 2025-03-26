@@ -77,6 +77,6 @@ def chat():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))  # Default to 10000 if not set
-    print(f"Starting server on port {port}")  # Debugging info
+    port = 8080  # Hardcoded port
+    print(f"🚀 Starting server on port {port}")  # Debugging info
     serve(app, host="0.0.0.0", port=port)
