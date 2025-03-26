@@ -493,6 +493,227 @@
         height: calc(100vh - 130px); /* Adjust for header and footer height */
         overflow-y: auto;
     }
+
+    /* Mobile Responsiveness Updates */
+    @media (max-width: 768px) {
+        .container-fluid {
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .card {
+            border-radius: 0;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .card-header {
+            padding: 10px;
+            height: auto;
+        }
+
+        .welcome-icon {
+            font-size: 32px;
+        }
+
+        .user_info span {
+            font-size: 16px;
+        }
+
+        .msg_cotainer, .msg_cotainer_send {
+            max-width: 85%;
+            padding: 12px 15px;
+            font-size: 14px;
+        }
+
+        .msg_time, .msg_time_send {
+            font-size: 9px;
+            bottom: -12px;
+        }
+
+        .type_msg {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        .send_btn, .voice_btn {
+            width: 35px !important;
+            height: 35px !important;
+        }
+
+        .welcome-message {
+            margin: 10px;
+            padding: 20px;
+            max-width: 95%;
+        }
+
+        .welcome-message h2 {
+            font-size: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 14px;
+        }
+
+        .clear-chat-btn {
+            padding: 3px 8px;
+            font-size: 11px;
+        }
+
+        .theme-toggle {
+            font-size: 16px;
+        }
+
+        .quick-reply-btn {
+            font-size: 11px;
+            padding: 4px 10px;
+        }
+
+        .modal-content {
+            width: 95%;
+            padding: 1.5rem;
+        }
+
+        .modal-btn {
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Fix for iOS viewport height issue */
+        @supports (-webkit-touch-callout: none) {
+            .chat, .card {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* Improve touch targets */
+        .quick-reply-btn, .clear-chat-btn, .theme-toggle, .send_btn, .voice_btn {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        /* Prevent zoom on input focus for iOS */
+        input[type="text"], textarea {
+            font-size: 16px;
+        }
+
+        /* Landscape orientation adjustments */
+        @media (orientation: landscape) {
+            .msg_card_body {
+                height: calc(100vh - 100px);
+            }
+
+            .welcome-message {
+                padding: 15px;
+            }
+        }
+    }
+
+    /* Tablet-specific adjustments */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .col-md-8, .col-xl-6 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .msg_cotainer, .msg_cotainer_send {
+            max-width: 75%;
+        }
+
+        .welcome-message {
+            max-width: 90%;
+        }
+    }
+
+    /* Fix for notched phones */
+    @supports (padding-top: env(safe-area-inset-top)) {
+        .card-header {
+            padding-top: calc(env(safe-area-inset-top) + 10px);
+        }
+
+        .card-footer {
+            padding-bottom: calc(env(safe-area-inset-bottom) + 10px);
+        }
+    }
+
+        /* Updated sizing fixes */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container-fluid {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .row {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        .col-md-8, .col-xl-6 {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            flex: 1;
+        }
+
+        .chat {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .card {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            flex: 0 0 auto;
+        }
+
+        .msg_card_body {
+            flex: 1 1 auto;
+            height: 0;
+            overflow-y: auto;
+        }
+
+        .card-footer {
+            flex: 0 0 auto;
+        }
+
+        /* Fix iOS height issues */
+        @supports (-webkit-touch-callout: none) {
+            .chat, .card {
+                height: -webkit-fill-available;
+            }
+        }
     </style>
 </head>
 <body>
